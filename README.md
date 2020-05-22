@@ -81,5 +81,4 @@
 |プライバシーポリシー同意のチェックを作りたい | input(checkbox) | policy-check | 「説明」にプライバシーポリシー文を記述する。改行は反映されるがタグは使えないので注意。 |
 |placeholderを入力したい | input(text), input(email),textarea | has-placeholder | 「説明」に入力した文言がplaceholderとして表示される。 placeholder、項目後ろの説明文との併用はできない。 |
 |項目の後ろに説明文を出したい | input(text) | text_after | 「説明」に入力した文言が項目の後ろの表示される。単位を出したい時などに。placeholder、項目下に表示との併用はできない。 |
-|項目の分かれた年月日の入力項目をいい感じにしたい | input(text)	inline_y, inline_m, inline_d |  | 年月日の3項目を並べた際にinputのサイズをいい感じにしたい場合各項目に指定する。 |
-inputのwidthが年が長め、月・日は短めになる。 |
+|項目の分かれた年月日の入力項目をいい感じにしたい | input(text)	inline_y, inline_m, inline_d |  | 年月日の3項目を並べた際にinputのサイズを調整したい場合各項目に指定する。 inputのwidthが年が長め、月・日は短めになる。 |
