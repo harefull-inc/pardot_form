@@ -1,0 +1,46 @@
+$requiredLabelBgColor: #1C7CD5;
+$requiredLabelTextColor: #fff;
+$textColor: #373a3c;
+
+$inputBorderColor: #5a5a5a;
+$inputBgColor: #fff;
+$inputBorderRadius: 5px;
+$selectArrowColor: #373a3c;
+$selectArrowBgColor: #e6e6e6;
+
+$hrColor: #a3a3a3;
+$hrMargin: 60px;
+$hrMarginXs: 40px;
+
+$errorMessageTextColor: #cb2e25;
+$inputErrorBorderColor: #cb2e25;
+
+$inputHeight: 40px;
+$elementPaddingSize: 20px;
+$elementPaddingSizeXs: 10px;
+$inputBeforeMargin: 30px;
+$inputBeforeMarginXs: 30px;
+
+$policyBgColor: #e8e8e8;
+
+$submitButtonColor: #62a1db;
+$submitButtonTextColor: #fff;
+$submitButtonHeight: 40px;
+$submitButtonWidth: 240px;
+$submitButtonTextSize: 20px;
+$submitButtonHeightXs: 50px;
+$submitButtonWidthXs: 240px;
+$submitButtonTextSizeXs: 20px;
+
+/* media query */
+$bp-smartphone-portrait: 520px;
+$bp-tablet-portrait: 768px;
+$bp-tablet-landscape: 1024px;
+$bp-laptop: 1920px;
+
+$breakpoints:(
+        xs: $bp-smartphone-portrait,
+        sm: $bp-tablet-portrait,
+        md: $bp-tablet-landscape,
+        xl: $bp-laptop
+) !default;

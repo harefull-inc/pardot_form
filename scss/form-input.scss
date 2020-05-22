@@ -1,0 +1,214 @@
+form.form {
+  // テキスト項目
+  .pd-text {
+    input.text {
+      border: 1px solid $inputBorderColor;
+      background-color: $inputBgColor;
+      border-radius: $inputBorderRadius;
+      box-sizing: border-box;
+      padding: 15px;
+      height: $inputHeight;
+      width: 100%;
+    }
+    &.input-300 {
+      input.text {
+        width: 300px;
+      }
+    }
+    &.error {
+      input.text {
+        border: 1px solid $inputErrorBorderColor;
+      }
+    }
+  }
+  .form-field {
+    // 2項目を1列に並べる
+    &.input-inline_2-1,
+    &.input-inline_2-2 {
+      float: left;
+    }
+    &.input-inline_2-1 {
+      width: 40%;
+      &::after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+      .field-label {
+        width: calc(100% - #{$elementPaddingSize});
+        padding-right: 0;
+      }
+      .input-wrapper {
+        width: calc(100% - #{$elementPaddingSize});
+        padding-right: 0;
+      }
+    }
+    &.input-inline_2-2 {
+      width: 40%;
+      padding: 0 0 0 0;
+      clear: inherit;
+      &.no-label {
+        padding-top: 30px;
+      }
+      &::after {
+        clear: both;
+      }
+      .input-wrapper {
+        padding-right: 0;
+      }
+      & + div + .form-field:not(.input-inline_2-1):not(.input-inline_3-1):not(.before_hr) {
+        padding-top: $inputBeforeMargin;
+      }
+    }
+    // 3項目を1列に並べる
+    &.input-inline_3-1,
+    &.input-inline_3-2,
+    &.input-inline_3-3 {
+      width: 30%;
+      float: left;
+      clear: inherit;
+    }
+    &.input-inline_3-2,
+    &.input-inline_3-3 {
+      &.no-label {
+        padding-top: 30px;
+      }
+      .input-wrapper {
+        padding-left: 0;
+      }
+    }
+    &.input-inline_3-1 {
+      .field-label {
+        padding-right: 0;
+      }
+    }
+
+    &.input-inline_3-3 {
+      &::after {
+        clear: both;
+      }
+      & + div + .form-field:not(.input-inline_2-1):not(.input-inline_3-1):not(.before_hr) {
+        padding-top: $inputBeforeMargin;
+      }
+    }
+    // 項目の後ろにdescriptionを1列で表示。descriptionの幅は20%内におさまる想定。
+    &.text_after {
+      .input-wrapper {
+        padding-right: 5px;
+        width: 80%;
+        display: inline-block;
+      }
+      .description {
+        width: auto;
+        display: inline-block;
+        padding: 0;
+      }
+    }
+    // 年月日入力欄を1列にならべて表示
+    &.inline_y {
+      width: 200px;
+      margin-right: 10px;
+      .input-wrapper {
+        width: 150px;
+      }
+    }
+    &.inline_m,
+    &.inline_d {
+      width: 100px;
+      margin-right: 5px;
+      .input-wrapper {
+        width: 70px;
+      }
+    }
+  }
+
+  // 日付選択項目
+  .pd-date {
+    input.date {
+      border: 1px solid $inputBorderColor;
+      background-color: $inputBgColor;
+      border-radius: $inputBorderRadius;
+      box-sizing: border-box;
+      padding: 15px;
+      height: $inputHeight;
+      width: 100%;
+    }
+    &.input-300 {
+      input.date {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@include mediaQuery-down(xs) {
+  form.form {
+    // テキスト項目
+    .pd-text {
+      &.input-300 {
+        input.text {
+          width: calc(80% - #{$elementPaddingSizeXs});
+        }
+      }
+    }
+    .form-field {
+      &.input-inline_2-1,
+      &.input-inline_2-2 {
+        clear: both;
+      }
+      &.input-inline_2-1 {
+        width: 100%;
+        .input-wrapper {
+          padding-right: $elementPaddingSizeXs;
+        }
+      }
+      &.input-inline_2-2 {
+        width: calc(100% - #{$elementPaddingSizeXs} * 2);
+        padding: 0 10px;
+        &.no-label {
+          margin-top: 10px;
+          padding: 0 $elementPaddingSizeXs;
+        }
+        &.after_hr {
+          margin-bottom: 0;
+        }
+      }
+
+      &.input-inline_3-1,
+      &.input-inline_3-2,
+      &.input-inline_3-3 {
+        width: 100%;
+        clear: both;
+        .field-label {
+          padding: 0 $elementPaddingSizeXs;
+        }
+      }
+      &.input-inline_3-1 {
+        .input-wrapper {
+          padding-right: $elementPaddingSizeXs;
+        }
+      }
+      &.input-inline_3-2 {
+        .input-wrapper {
+          padding-left: $elementPaddingSizeXs;
+        }
+        &.no-label {
+          margin-top: 10px;
+          padding: 0;
+        }
+      }
+      &.input-inline_3-3 {
+        &.no-label {
+          margin-top: 10px;
+          padding: 0;
+        }
+        &.after_hr {
+          margin-bottom: 0;
+        }
+        .input-wrapper {
+          padding-left: $elementPaddingSizeXs;
+        }
+      }
+    }
+  }
+}

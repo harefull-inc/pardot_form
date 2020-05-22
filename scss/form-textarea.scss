@@ -1,0 +1,10 @@
+form.form {
+  .pd-textarea {
+    textarea {
+      width: 100%;
+      border: 1px solid $inputBorderColor;
+      background-color: $inputBgColor;
+      border-radius: $inputBorderRadius;
+    }
+  }
+}

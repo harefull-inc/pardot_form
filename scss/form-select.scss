@@ -1,0 +1,73 @@
+form.form {
+  .pd-select {
+    .input-wrapper {
+      overflow: hidden;
+      margin-left: $elementPaddingSize;
+      padding: 0;
+      width: calc(100% - #{$elementPaddingSize});
+      position: relative;
+      border: 1px solid $inputBorderColor;
+      border-radius: $inputBorderRadius;
+      background: #ffffff;
+      height: 40px;
+      display: block;
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 40px;
+        content: '';
+        border-left: 1px solid $inputBorderColor;
+        background-color: $selectArrowBgColor;
+      }
+      &:after {
+        position: absolute;
+        top: 16px;
+        right: 12px;
+        width: 0;
+        height: 0;
+        padding: 0;
+        content: '';
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid $selectArrowColor;
+        pointer-events: none;
+      }
+      select {
+        z-index: 10;
+        position: relative;
+        width: 100%;
+        height: $inputHeight;
+        cursor: pointer;
+        text-overflow: ellipsis;
+        border: none;
+        outline: none;
+        background: transparent;
+        background-image: none;
+        box-shadow: none;
+        appearance: none;
+      }
+    }
+    &.input-300 {
+      .input-wrapper {
+        width: calc(300px - #{$elementPaddingSize});
+      }
+    }
+  }
+}
+@include mediaQuery-down(xs) {
+  form.form {
+    .pd-select {
+      .input-wrapper {
+        margin-left: 0;
+        width: calc(100% - #{$elementPaddingSizeXs});
+      }
+      &.input-300 {
+        .input-wrapper {
+          width: calc(80% - #{$elementPaddingSizeXs});
+        }
+      }
+    }
+  }
+}

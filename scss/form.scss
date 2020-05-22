@@ -1,0 +1,164 @@
+form.form {
+  .form-before-contents {
+    padding: 0 $elementPaddingSize;
+    width: calc(100% - #{$elementPaddingSize} * 2);
+    margin-bottom: 80px;
+    p {
+      line-height: 1.5em;
+      margin: 0;
+    }
+    .errors {
+      margin-top: 20px;
+    }
+  }
+  .form-field {
+    margin: $inputBeforeMargin 0 0 0;
+    clear: both;
+    // 項目の前に水平線
+    &.before_hr {
+      padding-top: $hrMargin;
+      margin-top: 0;
+      &:before {
+        content: "";
+        display: block;
+        border-bottom: 1px solid $hrColor;
+        margin: 0 0 $hrMargin 0;
+      }
+    }
+    // 項目の後に水平線
+    &.after_hr {
+      &:after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid $hrColor;
+        margin: $hrMargin 0;
+      }
+      & + div + .input-inline_3-1,
+      & + div + .input-inline_3-1 + div + .input-inline_3-2,
+      & + div + .input-inline_3-1 + div + .input-inline_3-2 + div + .input-inline_3-3,
+      & + div + .input-inline_2-1,
+      & + div + .input-inline_2-1 + div + .input-inline_2-2 {
+        margin-top: 0;
+      }
+    }
+    &.error {
+      margin-bottom: 0;
+    }
+    &.no-margin-bottom {
+      margin-bottom: 0;
+    }
+  }
+  .field-label {
+    display: block;
+    width: calc(100% - #{$elementPaddingSize} * 2);
+    padding: 0 $elementPaddingSize;
+    margin-bottom: 8px;
+    height: 22px;
+    font-weight: 500;
+  }
+  .no-label {
+    width: calc(100% - #{$elementPaddingSize} * 2);
+    padding: 0 $elementPaddingSize;
+    .field-label {
+      display: none;
+    }
+  }
+  .input-wrapper {
+    display: block;
+    width: calc(100% - #{$elementPaddingSize} * 2);
+    padding: 0 $elementPaddingSize;
+  }
+  .description {
+    display: block;
+    width: calc(100% - #{$elementPaddingSize} * 2);
+    padding: 10px $elementPaddingSize;
+  }
+
+  // 必須項目のラベル表示
+  p.required label.field-label,
+  span.required label.field-label {
+    background: inherit;
+    &::after {
+      content: "必須";
+      @include fontsize(12,12);
+      display: inline-block;
+      background-color: $requiredLabelBgColor;
+      color: $requiredLabelTextColor;
+      padding: 5px;
+      border-radius: 3px;
+      margin-left: 5px;
+    }
+  }
+
+  // error
+  .errors {
+    color: $errorMessageTextColor;
+    border: 1px solid $inputErrorBorderColor;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  p.error.no-label:not(.form-field) {
+    box-sizing: border-box;
+    color: $errorMessageTextColor;
+    clear: both;
+    margin: 0;
+    padding: 10px $elementPaddingSize;
+  }
+}
+
+@include mediaQuery-down(xs) {
+  form.form {
+    .form-field {
+      margin-top: $inputBeforeMarginXs;
+      padding: 0 $elementPaddingSizeXs;
+      &.before_hr {
+        padding-top: $hrMarginXs;
+        &:before {
+          margin: 0 0 $hrMarginXs 0;
+        }
+      }
+      &.after_hr {
+        & + div + .input-inline_3-1 + div + .input-inline_3-2,
+        & + div + .input-inline_3-1 + div + .input-inline_3-2 + div + .input-inline_3-3,
+        & + div + .input-inline_2-1 + div + .input-inline_2-2 {
+          margin-top: 10px;
+        }
+        &:after {
+          margin: $hrMarginXs 0;
+        }
+      }
+    }
+    .form-before-contents {
+      width: calc(100% - #{$elementPaddingSizeXs} * 2);
+      padding: 0 $elementPaddingSizeXs;
+      margin-bottom: 40px;
+    }
+    .field-label {
+      width: 100%;
+      padding: 0;
+      height: 22px;
+      font-weight: 500;
+    }
+    .no-label {
+      width: 100%;
+      padding: 10px 0;
+    }
+    .input-wrapper {
+      width: 100%;
+      padding: 0;
+    }
+    .description {
+      width: calc(100% - #{$elementPaddingSizeXs} * 2);
+      padding: 10px 0;
+    }
+    p.error.no-label:not(.form-field) {
+      color: $errorMessageTextColor;
+      clear: both;
+      padding: 10px $elementPaddingSizeXs 0 $elementPaddingSizeXs;
+      margin: 0;
+    }
+    .form-field p.error.no-label {
+      padding: $elementPaddingSizeXs 0;
+    }
+  }
+}

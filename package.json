@@ -1,0 +1,21 @@
+{
+  "name": "pardot-form-style",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "browser-sync": "^2.26.7",
+    "node-sass": "^4.14.1",
+    "node-sass-globbing": "^0.0.23",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.1",
+    "chokidar-cli": "^2.1.0"
+  },
+  "scripts": {
+    "compile:css2cssprefix": "postcss style.css -u autoprefixer -o style.css",
+    "compile:scss2css": "node-sass scss/style.scss --importer node_modules/node-sass-globbing/index.js ./style.css --output-style expanded",
+    "compile:scss2cssprefix": "run-s compile:scss2css compile:css2cssprefix",
+    "watch:scss2cssprefix": "chokidar \"scss/\" --command \"npm run compile:scss2cssprefix\" --initial"
+  }
+}

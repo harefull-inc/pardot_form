@@ -1,0 +1,45 @@
+@mixin fontsize($fontsize, $lin) {
+  line-height: $lin / $fontsize;
+  font-size: #{$fontsize / 10}rem;
+}
+
+@mixin letterSpacing($sp) {
+  letter-spacing: #{$sp / 1000}em;
+}
+
+@mixin mediaQuery-up($breakpoint) {
+  @media screen and ( min-width: #{map-get($breakpoints, $breakpoint)} ) {
+    @content;
+  }
+}
+
+@mixin mediaQuery-down($breakpoint) {
+  @media screen and ( max-width: #{map-get($breakpoints, $breakpoint)} ) {
+    @content;
+  }
+}
+
+@mixin mediaQuery-between($breakpoint1, $breakpoint2) {
+  $size1: null;
+  $size2: null;
+  @each $bp, $size in $breakpoints{
+    @if ( $bp == $breakpoint1 ){
+      $size1: $size;
+    }
+    @if ( $bp == $breakpoint2 ){
+      $size2: $size;
+    }
+  }
+
+  @if ( $size1 <= $size2 ) {
+    @media ( min-width: #{map-get($breakpoints, $breakpoint1)} ) and ( max-width: #{map-get($breakpoints, $breakpoint2)} ) {
+      @content;
+    }
+  } @else {
+    @media ( min-width: #{map-get($breakpoints, $breakpoint2)} ) and ( max-width: #{map-get($breakpoints, $breakpoint1)} ) {
+      @content;
+    }
+  }
+
+}
+

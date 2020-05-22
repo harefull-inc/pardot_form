@@ -1,0 +1,62 @@
+form.form {
+  .pd-checkbox {
+    .field-label {
+      margin-bottom: 20px;
+    }
+    .value {
+      span {
+        margin-bottom: 10px;
+        display: block;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        label {
+          margin-left: 5px;
+        }
+      }
+    }
+    // 項目を1列で表示
+    &.inline {
+      .value {
+        span {
+          display: inline-block;
+          margin-right: 30px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // プライバシーポリシー同意のチェックボックス
+  .policy-check {
+    background-color: $policyBgColor;
+    padding: 40px $elementPaddingSize;
+    border-radius: 5px;
+    .field-label {
+      padding-left: 0;
+    }
+    .privacy-policy-text {
+      border: 1px solid $inputBorderColor;
+      background-color: $inputBgColor;
+      padding: 10px;
+      overflow: scroll;
+      width: calc(100% - 20px);
+      height: 200px;
+      border-radius: $inputBorderRadius;
+      & + .input-wrapper {
+        margin: 20px 0;
+        padding: 0;
+        text-align: center;
+      }
+    }
+    &.error {
+      .privacy-policy-text {
+        & + .input-wrapper {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

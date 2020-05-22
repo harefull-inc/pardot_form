@@ -1,0 +1,16 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem; // 16px
+  color: $textColor;
+  font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+}
+
+@include mediaQuery-down(xs) {
+  body {
+    font-size: 1.4rem; // 14px
+  }
+}
+
