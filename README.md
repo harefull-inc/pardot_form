@@ -70,8 +70,7 @@
 
 | やりたいこと | 対象項目 | CSSクラス名 | 備考 |
 |:--|:--|:--|:--|
-|inputを2項目並べたい | input(text) | input-inline_2-1,
-|input-inline_2-2" | 必ずtext_inline_1とtext_inline_2を並べること。input-inline_2-2はafter_hrとの共存はできないので、この項目の後に水平線を引きたい場合は次の項目にbefore_hrをつけるエラーメッセージは最初の項目(input-inline_*-1)に入力したメッセージが表示され、後ろの項目に設定したエラーメッセージは表示されなくなる。 |
+|inputを2項目並べたい | input(text) | input-inline_2-1,input-inline_2-2" | 必ずtext_inline_1とtext_inline_2を並べること。input-inline_2-2はafter_hrとの共存はできないので、この項目の後に水平線を引きたい場合は次の項目にbefore_hrをつけるエラーメッセージは最初の項目(input-inline_*-1)に入力したメッセージが表示され、後ろの項目に設定したエラーメッセージは表示されなくなる。 |
 |inputを3項目並べたい | input-inline_3-1〜input-inline_3-3	| | |
 |inputのラベルを表示したくない | input-inline_2-2,input-inline_3-2,input-inline_3-3 | no-label	| 2項目並べた場合2個目のinputはラベル表示したくないぞという場合に利用する|
 |項目幅を300pxにしたい | input(text),input(email),select | input-300 | 郵便番号など、入力欄の幅が短くていい場合こちら付与 |
