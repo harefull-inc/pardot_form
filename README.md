@@ -29,7 +29,7 @@
 </div>                ←追加
                 %%form-start-loop-fields%%
 
-....
+....（省略）....
 
 %%form-if-field-label%%
                                         <label class="field-label" for="%%form-field-id%%">%%form-field-label%%</label>
@@ -38,7 +38,7 @@
                                 %%form-if-field-description%%
                                         <span class="description">%%form-field-description%%</span>
                                 %%form-end-if-field-description%%
-....                            
+....（省略）....                       
 ```
 
 レイアウトのテンプレート
