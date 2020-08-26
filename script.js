@@ -32,8 +32,8 @@ $(function(){
     $errorMsg.remove();
   });
 
-  $('.input-inline_2-1, .input-inline_3-1').each(function(i,item){
-    const $errorMsg = $(item).nextAll('.error').first();
+  $('.input-inline_2-1.error, .input-inline_3-1.error').each(function(i,item){
+    const $errorMsg = $(item).nextAll('.error.no-label:not(.form-field)').first();
     const $newErrorMsg = $errorMsg.clone();
     $errorMsg.remove();
     const $lastElem = $(item).nextAll('.input-inline_2-2, .input-inline_3-3').first();
