@@ -9,6 +9,9 @@ form.form {
       padding: 15px;
       height: $inputHeight;
       width: 100%;
+      &.error {
+        border: 1px solid $inputErrorBorderColor;
+      }
     }
     &.input-300 {
       input.text {

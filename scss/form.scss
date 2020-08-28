@@ -73,7 +73,6 @@ form.form {
     width: calc(100% - #{$elementPaddingSize} * 2);
     padding: 10px $elementPaddingSize;
   }
-
   // 必須項目のラベル表示
   p.required label.field-label,
   span.required label.field-label {
@@ -89,7 +88,6 @@ form.form {
       margin-left: 5px;
     }
   }
-
   // error
   .errors {
     color: $errorMessageTextColor;
@@ -103,6 +101,17 @@ form.form {
     clear: both;
     margin: 0;
     padding: 10px $elementPaddingSize;
+  }
+  textarea + p.error.no-label:not(.form-field),
+  input + p.error.no-label:not(.form-field) {
+    padding: 10px 0;
+  }
+}
+
+body.form-width-fix {
+  form.form {
+    width: 800px;
+    margin: 0 auto;
   }
 }
 
@@ -159,6 +168,12 @@ form.form {
     }
     .form-field p.error.no-label {
       padding: $elementPaddingSizeXs 0;
+    }
+  }
+  body.form-width-fix {
+    form.form {
+      width: 100%;
+      margin: 0 auto;
     }
   }
 }
