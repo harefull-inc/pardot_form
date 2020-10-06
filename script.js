@@ -61,7 +61,7 @@ $(function(){
     $privacy.find('.error.no-label').show();
   }
 
-  $('.required input[type=text],.required input[type=number],.required input[type=email],textarea,select').checkRequire();
+  $('.required input[type=text],.required input[type=number],.required input[type=email],.required textarea, .required select').checkRequire();
 });
  const nl2br = function(str) {
   return str.replace(/\r\n/g, "<br />").replace(/(\n|\r)/g, "<br />");
@@ -71,15 +71,27 @@ jQuery.fn.extend( {
   checkRequire: function(){
     $(this).on('blur change',function(){
       if(!$(this).val()) {
-        if($(this).next('p.error').length < 1) {
-          $inputLabel = $(this).parent().prev().text();
-          $errMsg = $('<p>').addClass('error no-label').text($inputLabel+'は必須です');
-          $(this).addClass('error');
-          $(this).after($errMsg);
+        $inputLabel = $(this).parent().prev().text();
+        $errMsg = $('<p>').addClass('error no-label').text($inputLabel+'は必須です');
+        $(this).addClass('error');
+
+        if ($(this).hasClass('select')) {
+          if($(this).parent().next('p.error').length < 1) {
+            $(this).parent().after($errMsg);
+          }
+        } else {
+          if($(this).next('p.error').length < 1) {
+            $(this).after($errMsg);
+          }
         }
+
       } else {
         $(this).removeClass('error');
-        $(this).next('p.error').remove();
+        if ($(this).hasClass('select')) {
+          $(this).parent().next('p.error').remove();
+        } else {
+          $(this).next('p.error').remove();
+        }
       }
     });
   }
