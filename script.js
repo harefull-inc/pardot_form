@@ -1,16 +1,17 @@
 $(function(){
   const $formFields = $('.form-field.has-placeholder');
   $formFields.each(function(i, item) {
-    if ($(item).children('span.description').length) {
-      const $placeholder = $(item).children('span.description');
-      const placeholder_text = $placeholder.text();
-      $placeholder.hide();
-      $(item).find('.input-wrapper > input,.input-wrapper > textarea').attr('placeholder',placeholder_text);
+    const $description = $(item).find('.hpdf-description')
+    if ($description.length) {
+      const placeholder_text = $description.text();
+      $description.hide();
+      $(item).find('.input-wrapper > input,.input-wrapper > textarea')
+        .attr('placeholder',placeholder_text);
     }
   });
   const $policyElem = $('.form-field.policy-check');
   if($policyElem.length) {
-    const $placeholder = $policyElem.children('span.description');
+    const $placeholder = $policyElem.find('.hpdf-description');
     const placeholder_text = $placeholder.text();
     $placeholder.hide();
     $policyElem.find('.input-wrapper')
@@ -20,9 +21,7 @@ $(function(){
       );
   }
   const inlineElements = [
-    //".input-inline_2-1.error",
     ".input-inline_2-2.error",
-    //".input-inline_3-1.error",
     ".input-inline_3-2.error",
     ".input-inline_3-3.error"
   ];
