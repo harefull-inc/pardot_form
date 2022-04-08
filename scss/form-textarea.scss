@@ -1,6 +1,7 @@
 form.form {
   .pd-textarea {
     textarea {
+      padding: 15px;
       width: 100%;
       border: 1px solid $inputBorderColor;
       background-color: $inputBgColor;

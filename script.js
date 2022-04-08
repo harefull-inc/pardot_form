@@ -60,9 +60,33 @@ $(function(){
     $privacy.find('.error.no-label').show();
   }
 
+  $("[class*='maxlength-'] .input-wrapper").each(function(){
+    const $inputWrapper = $(this);
+    const regex = /maxlength-(?<len>\d*)/;
+    const classList = $(this).parent().attr("class").split(" ");
+    let maxLength = 0;
+    for (var i = 0; i < classList.length; i++) {
+      const match = classList[i].match(regex);
+      if (match) {
+        maxLength = match[1];
+      }
+    }
+
+    const $input = $(this).children();
+    $input.on('blur change',function(){
+      $inputWrapper.next(".error").remove();
+        if( $(this).val().length >  maxLength) {
+          $inputWrapper.parent().addClass("error");
+          $inputWrapper.after("<p class=\"error no-label\">" + maxLength + "文字以内で入力してください</p>");
+        } else {
+          $inputWrapper.parent().removeClass("error");
+        }
+      });
+    });
+
   $('.required input[type=text],.required input[type=number],.required input[type=email],.required textarea, .required select').checkRequire();
 });
- const nl2br = function(str) {
+const nl2br = function(str) {
   return str.replace(/\r\n/g, "<br />").replace(/(\n|\r)/g, "<br />");
 }
 

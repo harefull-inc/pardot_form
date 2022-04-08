@@ -68,7 +68,7 @@ form.form {
     width: calc(100% - #{$elementPaddingSize} * 2);
     padding: 0 $elementPaddingSize;
   }
-  .description {
+  .hpdf-description {
     display: block;
     width: calc(100% - #{$elementPaddingSize} * 2);
     padding: 10px $elementPaddingSize;
@@ -156,7 +156,7 @@ body.form-width-fix {
       width: 100%;
       padding: 0;
     }
-    .description {
+    .hpdf-description {
       width: calc(100% - #{$elementPaddingSizeXs} * 2);
       padding: 10px 0;
     }

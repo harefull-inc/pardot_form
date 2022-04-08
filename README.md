@@ -183,7 +183,7 @@ policy-check
 	<span class="input-wrapper">%%form-field-input%%</span>
   // 以下必須
 	%%form-if-field-description%%
-		<span class="description">%%form-field-description%%</span>
+		<span class="hpdf-description">%%form-field-description%%</span>
 	%%form-end-if-field-description%%
 </p>
 ```

@@ -76,9 +76,6 @@ form.form {
       &.no-label {
         padding-top: 30px;
       }
-      .input-wrapper {
-        padding-left: 0;
-      }
     }
     &.input-inline_3-1 {
       .field-label {
@@ -101,7 +98,7 @@ form.form {
         width: 80%;
         display: inline-block;
       }
-      .description {
+      .hpdf-description {
         width: auto;
         display: inline-block;
         padding: 0;
@@ -117,7 +114,8 @@ form.form {
     }
     &.inline_m,
     &.inline_d {
-      width: 100px;
+      width: 120px;
+      padding: 0;
       margin-right: 5px;
       .input-wrapper {
         width: 70px;
