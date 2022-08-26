@@ -1,10 +1,11 @@
+@use "sass:math";
 @mixin fontsize($fontsize, $lin) {
-  line-height: $lin / $fontsize;
-  font-size: #{$fontsize / 10}rem;
+  line-height: math.div($lin, $fontsize);
+  font-size: #{calc($fontsize / 10)}rem;
 }
 
 @mixin letterSpacing($sp) {
-  letter-spacing: #{$sp / 1000}em;
+  letter-spacing: #{calc($sp / 1000)}em;
 }
 
 @mixin mediaQuery-up($breakpoint) {
