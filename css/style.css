@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* media query */
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -42,7 +46,7 @@ body {
 
 form.form .form-before-contents {
   padding: 0 20px;
-  width: calc(100% - 20px * 2);
+  width: 100%;
   margin-bottom: 80px;
 }
 form.form .form-before-contents p {
@@ -83,14 +87,14 @@ form.form .form-field.no-margin-bottom {
 }
 form.form .field-label {
   display: block;
-  width: calc(100% - 20px * 2);
+  width: 100%;
   padding: 0 20px;
   margin-bottom: 8px;
   height: 22px;
   font-weight: 500;
 }
 form.form .no-label {
-  width: calc(100% - 20px * 2);
+  width: 100%;
   padding: 0 20px;
 }
 form.form .no-label .field-label {
@@ -98,12 +102,12 @@ form.form .no-label .field-label {
 }
 form.form .input-wrapper {
   display: block;
-  width: calc(100% - 20px * 2);
+  width: 100%;
   padding: 0 20px;
 }
 form.form .hpdf-description {
   display: block;
-  width: calc(100% - 20px * 2);
+  width: 100%;
   padding: 10px 20px;
 }
 form.form p.required label.field-label,
@@ -163,7 +167,7 @@ body.form-width-fix form.form {
     margin: 40px 0;
   }
   form.form .form-before-contents {
-    width: calc(100% - 10px * 2);
+    width: 100%;
     padding: 0 10px;
     margin-bottom: 40px;
   }
@@ -182,7 +186,7 @@ body.form-width-fix form.form {
     padding: 0;
   }
   form.form .hpdf-description {
-    width: calc(100% - 10px * 2);
+    width: 100%;
     padding: 10px 0;
   }
   form.form p.error.no-label:not(.form-field) {
@@ -221,7 +225,7 @@ form.form .form-field.input-inline_2-1, form.form .form-field.input-inline_2-2 {
   float: left;
 }
 form.form .form-field.input-inline_2-1 {
-  width: 40%;
+  width: calc(50% - 20px / 2);
 }
 form.form .form-field.input-inline_2-1::after {
   display: block;
@@ -229,15 +233,15 @@ form.form .form-field.input-inline_2-1::after {
   clear: both;
 }
 form.form .form-field.input-inline_2-1 .field-label {
-  width: calc(100% - 20px);
+  width: 100%;
   padding-right: 0;
 }
 form.form .form-field.input-inline_2-1 .input-wrapper {
-  width: calc(100% - 20px);
+  width: 100%;
   padding-right: 0;
 }
 form.form .form-field.input-inline_2-2 {
-  width: 40%;
+  width: calc(50% - 20px / 2);
   padding: 0 0 0 0;
   clear: inherit;
 }
@@ -281,16 +285,15 @@ form.form .form-field.text_after .hpdf-description {
   padding: 0;
 }
 form.form .form-field.inline_y {
-  width: 200px;
+  width: 160px;
   margin-right: 10px;
 }
 form.form .form-field.inline_y .input-wrapper {
-  width: 150px;
+  width: 140px;
 }
 form.form .form-field.inline_m, form.form .form-field.inline_d {
-  width: 120px;
+  width: 90px;
   padding: 0;
-  margin-right: 5px;
 }
 form.form .form-field.inline_m .input-wrapper, form.form .form-field.inline_d .input-wrapper {
   width: 70px;
@@ -310,7 +313,7 @@ form.form .pd-date.input-300 input.date {
 
 @media screen and (max-width: 520px) {
   form.form .pd-text.input-300 input.text {
-    width: calc(80% - 10px);
+    width: 80%;
   }
   form.form .form-field.input-inline_2-1, form.form .form-field.input-inline_2-2 {
     clear: both;
@@ -318,11 +321,8 @@ form.form .pd-date.input-300 input.date {
   form.form .form-field.input-inline_2-1 {
     width: 100%;
   }
-  form.form .form-field.input-inline_2-1 .input-wrapper {
-    padding-right: 10px;
-  }
   form.form .form-field.input-inline_2-2 {
-    width: calc(100% - 10px * 2);
+    width: 100%;
     padding: 0 10px;
   }
   form.form .form-field.input-inline_2-2.no-label {
@@ -384,7 +384,7 @@ form.form .pd-radio .value span input[type=radio] {
   margin-top: 8px;
 }
 form.form .pd-radio .value span label {
-  width: calc(100% - (15px + (20px * 2)));
+  width: calc(100% - (15px + (20px / 2)));
   margin-left: 10px;
   line-height: 1.75em;
   display: inline-block;
@@ -433,7 +433,7 @@ form.form .policy-check .privacy-policy-text {
   background-color: #fff;
   padding: 10px;
   overflow: scroll;
-  width: calc(100% - 20px);
+  width: 100%;
   height: 200px;
   border-radius: 5px;
 }
@@ -450,7 +450,7 @@ form.form .pd-select .input-wrapper {
   overflow: hidden;
   margin-left: 20px;
   padding: 0;
-  width: calc(100% - 20px);
+  width: calc(100% - (20px * 2));
   position: relative;
   border: 1px solid #5a5a5a;
   border-radius: 5px;
@@ -497,16 +497,16 @@ form.form .pd-select .input-wrapper select {
   appearance: none;
 }
 form.form .pd-select.input-300 .input-wrapper {
-  width: calc(300px - 20px);
+  width: 300px;
 }
 
 @media screen and (max-width: 520px) {
   form.form .pd-select .input-wrapper {
     margin-left: 0;
-    width: calc(100% - 10px);
+    width: 100%;
   }
   form.form .pd-select.input-300 .input-wrapper {
-    width: calc(80% - 10px);
+    width: 80%;
   }
 }
 form.form .submit {

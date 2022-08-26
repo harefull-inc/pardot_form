@@ -31,23 +31,23 @@ form.form {
       float: left;
     }
     &.input-inline_2-1 {
-      width: 40%;
+      width: calc(50% - #{$elementPaddingSize} / 2);
       &::after {
         display: block;
         content: "";
         clear: both;
       }
       .field-label {
-        width: calc(100% - #{$elementPaddingSize});
+        width: 100%;
         padding-right: 0;
       }
       .input-wrapper {
-        width: calc(100% - #{$elementPaddingSize});
+        width: 100%;
         padding-right: 0;
       }
     }
     &.input-inline_2-2 {
-      width: 40%;
+      width: calc(50% - #{$elementPaddingSize} / 2);
       padding: 0 0 0 0;
       clear: inherit;
       &.no-label {
@@ -106,17 +106,16 @@ form.form {
     }
     // 年月日入力欄を1列にならべて表示
     &.inline_y {
-      width: 200px;
+      width: 160px;
       margin-right: 10px;
       .input-wrapper {
-        width: 150px;
+        width: 140px;
       }
     }
     &.inline_m,
     &.inline_d {
-      width: 120px;
+      width: 90px;
       padding: 0;
-      margin-right: 5px;
       .input-wrapper {
         width: 70px;
       }
@@ -148,7 +147,7 @@ form.form {
     .pd-text {
       &.input-300 {
         input.text {
-          width: calc(80% - #{$elementPaddingSizeXs});
+          width: 80%;
         }
       }
     }
@@ -159,12 +158,9 @@ form.form {
       }
       &.input-inline_2-1 {
         width: 100%;
-        .input-wrapper {
-          padding-right: $elementPaddingSizeXs;
-        }
       }
       &.input-inline_2-2 {
-        width: calc(100% - #{$elementPaddingSizeXs} * 2);
+        width: 100%;
         padding: 0 10px;
         &.no-label {
           margin-top: 10px;

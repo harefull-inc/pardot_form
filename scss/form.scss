@@ -1,7 +1,7 @@
 form.form {
   .form-before-contents {
     padding: 0 $elementPaddingSize;
-    width: calc(100% - #{$elementPaddingSize} * 2);
+    width: 100%;
     margin-bottom: 80px;
     p {
       line-height: 1.5em;
@@ -50,14 +50,14 @@ form.form {
   }
   .field-label {
     display: block;
-    width: calc(100% - #{$elementPaddingSize} * 2);
+    width: 100%;
     padding: 0 $elementPaddingSize;
     margin-bottom: 8px;
     height: 22px;
     font-weight: 500;
   }
   .no-label {
-    width: calc(100% - #{$elementPaddingSize} * 2);
+    width: 100%;
     padding: 0 $elementPaddingSize;
     .field-label {
       display: none;
@@ -65,12 +65,12 @@ form.form {
   }
   .input-wrapper {
     display: block;
-    width: calc(100% - #{$elementPaddingSize} * 2);
+    width: 100%;
     padding: 0 $elementPaddingSize;
   }
   .hpdf-description {
     display: block;
-    width: calc(100% - #{$elementPaddingSize} * 2);
+    width: 100%;
     padding: 10px $elementPaddingSize;
   }
   // 必須項目のラベル表示
@@ -138,7 +138,7 @@ body.form-width-fix {
       }
     }
     .form-before-contents {
-      width: calc(100% - #{$elementPaddingSizeXs} * 2);
+      width: 100%;
       padding: 0 $elementPaddingSizeXs;
       margin-bottom: 40px;
     }
@@ -157,7 +157,7 @@ body.form-width-fix {
       padding: 0;
     }
     .hpdf-description {
-      width: calc(100% - #{$elementPaddingSizeXs} * 2);
+      width: 100%;
       padding: 10px 0;
     }
     p.error.no-label:not(.form-field) {

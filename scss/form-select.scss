@@ -4,7 +4,7 @@ form.form {
       overflow: hidden;
       margin-left: $elementPaddingSize;
       padding: 0;
-      width: calc(100% - #{$elementPaddingSize});
+      width: calc(100% - (#{$elementPaddingSize} * 2));
       position: relative;
       border: 1px solid $inputBorderColor;
       border-radius: $inputBorderRadius;
@@ -52,7 +52,7 @@ form.form {
     }
     &.input-300 {
       .input-wrapper {
-        width: calc(300px - #{$elementPaddingSize});
+        width: 300px;
       }
     }
   }
@@ -62,11 +62,11 @@ form.form {
     .pd-select {
       .input-wrapper {
         margin-left: 0;
-        width: calc(100% - #{$elementPaddingSizeXs});
+        width: 100%;
       }
       &.input-300 {
         .input-wrapper {
-          width: calc(80% - #{$elementPaddingSizeXs});
+          width: 80%;
         }
       }
     }

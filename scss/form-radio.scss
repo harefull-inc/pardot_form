@@ -16,7 +16,7 @@ form.form {
           margin-top: 8px;
         }
         label {
-          width: calc(100% - (15px + (#{$elementPaddingSize} * 2)));
+          width: calc(100% - (15px + (#{$elementPaddingSize} / 2)));
           margin-left: 10px;
           line-height: 1.75em;
           display: inline-block;
