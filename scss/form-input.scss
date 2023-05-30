@@ -23,6 +23,21 @@ form.form {
         border: 1px solid $inputErrorBorderColor;
       }
     }
+    // 郵便番号
+    &.hpdf-zipcode {
+      .zipcode-mark {
+        margin-right: 5px;
+      }
+      #searchZipcode {
+        height: 40px;
+        margin-left: 10px;
+        padding: 5px 10px;
+        text-decoration: none;
+        background-color: $zipSearchBtnBgColor;
+        color: $zipSearchBtnTextColor;
+        border: 1px solid $zipSearchBtnBorderColor;
+      }
+    }
   }
   .form-field {
     // 2項目を1列に並べる
@@ -106,7 +121,7 @@ form.form {
     }
     // 年月日入力欄を1列にならべて表示
     &.inline_y {
-      width: 160px;
+      width: 200px;
       margin-right: 10px;
       .input-wrapper {
         width: 140px;
@@ -114,7 +129,7 @@ form.form {
     }
     &.inline_m,
     &.inline_d {
-      width: 90px;
+      width: 120px;
       padding: 0;
       .input-wrapper {
         width: 70px;
@@ -148,6 +163,15 @@ form.form {
       &.input-300 {
         input.text {
           width: 80%;
+        }
+      }
+      // 郵便番号
+      &.hpdf-zipcode {
+        .zipcode-mark {
+          margin-right: 5px;
+        }
+        input.text {
+          width: 50%;
         }
       }
     }

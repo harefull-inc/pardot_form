@@ -3,6 +3,7 @@ form.form {
     textarea {
       padding: 15px;
       width: 100%;
+      height: calc(1.15em * 5);
       border: 1px solid $inputBorderColor;
       background-color: $inputBgColor;
       border-radius: $inputBorderRadius;

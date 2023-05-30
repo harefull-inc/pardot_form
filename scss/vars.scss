@@ -23,7 +23,7 @@ $inputBeforeMarginXs: 30px;
 
 $policyBgColor: #e8e8e8;
 
-$submitButtonColor: #62a1db;
+$submitButtonColor: #e59700;
 $submitButtonTextColor: #fff;
 $submitButtonHeight: 40px;
 $submitButtonWidth: 240px;
@@ -31,6 +31,11 @@ $submitButtonTextSize: 20px;
 $submitButtonHeightXs: 50px;
 $submitButtonWidthXs: 240px;
 $submitButtonTextSizeXs: 20px;
+
+// 郵便番号検索ボタン色
+$zipSearchBtnBgColor: #e59700;
+$zipSearchBtnBorderColor: #d6d0cd;
+$zipSearchBtnTextColor: #fff;
 
 /* media query */
 $bp-smartphone-portrait: 520px;

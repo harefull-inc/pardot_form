@@ -84,6 +84,47 @@ $(function(){
       });
     });
 
+  $('.hpdf-zipcode').append('<span class="p-country-name" style="display:none;">Japan</span>');
+  const $zipInput = $('.hpdf-zipcode .input-wrapper input');
+  $zipInput.before('<span class="zipcode-mark">〒</span>');
+  $zipInput.after('<a href="" id="searchZipcode">検索</a>');
+
+  $('#searchZipcode').on('click', function () {
+    const zip = $zipInput.val().replace('-', '');
+    const zipPattern = /^[0-9]{7}$/;
+    if(!zip.match(zipPattern)) {
+      return false;
+    }
+
+    const api = 'https://zipcloud.ibsnet.co.jp/api/search?zipcode=';
+    const url = api + zip;
+
+    fetchJsonp(url, {
+      timeout: 10000
+    })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          if (data.status === 400) {
+            // 入力パラメータエラー
+            console.log('入力パラメータエラー');
+          } else if (data.results === null) {
+            // みつからない
+          } else {
+            $('.pref select option').filter(function () {
+                return $(this).text() === data.results[0].address1;
+            }).prop('selected', true);
+            $('.address_one .input-wrapper input').val(`${data.results[0].address2}${data.results[0].address3}`);
+          }
+        })
+        .catch((ex) => {
+          console.log(ex);
+          return false;
+        });
+    return false;
+  });
+
   $('.required input[type=text],.required input[type=number],.required input[type=email],.required textarea, .required select').checkRequire();
 });
 const nl2br = function(str) {
@@ -102,6 +143,10 @@ jQuery.fn.extend( {
           if($(this).parent().next('p.error').length < 1) {
             $(this).parent().after($errMsg);
           }
+        } else if ($(this).parent().parent().hasClass('hpdf-zipcode')) {
+          if($("#searchZipcode").next('p.error').length < 1) {
+            $("#searchZipcode").after($errMsg);
+          }
         } else {
           if($(this).next('p.error').length < 1) {
             $(this).after($errMsg);
@@ -112,6 +157,8 @@ jQuery.fn.extend( {
         $(this).removeClass('error');
         if ($(this).hasClass('select')) {
           $(this).parent().next('p.error').remove();
+        } else if ($(this).parent().parent().hasClass('hpdf-zipcode')) {
+          $("#searchZipcode").next('p.error').remove();
         } else {
           $(this).next('p.error').remove();
         }
