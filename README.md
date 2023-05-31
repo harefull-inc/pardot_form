@@ -82,6 +82,7 @@
                 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
                 <link rel="stylesheet" type="text/css" href="{生成されるCSSのURL}">
                 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/fetch-jsonp@1.1.3/build/fetch-jsonp.min.js"></script>
                 <script src="{生成されるjsファイルのURL}"></script>
         </head>
         <body>
