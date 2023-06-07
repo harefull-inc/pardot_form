@@ -542,6 +542,7 @@ form.form .submit input {
   margin: 15px auto;
   display: block;
   font-size: 20px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 520px) {
