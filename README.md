@@ -283,11 +283,11 @@ inputのwidthは年が長め、月・日は短めになる。
 #### 対象項目
 input(text)
 #### 項目に付与するCSSクラス
-hpdf-zipcode, pref, address_one
+hpdf-zipcode, pref, hpdf-address_one
 #### 自動入力先項目項目
 input(select), input(text)
 #### 自動入力先項目に付与するCSSクラス
-pref, address_one
+pref, hpdf-address_one
 #### 備考
 zipcloudが提供している[郵便番号検索API](http://zipcloud.ibsnet.co.jp/doc/api)を利用して住所を自動入力している。
 
