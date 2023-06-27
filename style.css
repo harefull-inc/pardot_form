@@ -143,6 +143,10 @@ form.form textarea + p.error.no-label:not(.form-field),
 form.form input + p.error.no-label:not(.form-field) {
   padding: 10px 0;
 }
+form.form .g-recaptcha {
+  display: flex;
+  justify-content: center;
+}
 
 body.form-width-fix form.form {
   width: 800px;

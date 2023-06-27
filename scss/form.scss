@@ -106,6 +106,10 @@ form.form {
   input + p.error.no-label:not(.form-field) {
     padding: 10px 0;
   }
+  .g-recaptcha {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 body.form-width-fix {
